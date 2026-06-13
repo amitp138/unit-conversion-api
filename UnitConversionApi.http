@@ -1,0 +1,26 @@
+@UnitConversionApi_HostAddress = http://localhost:5299
+
+### 1. Valid Length Conversion (Meter to Feet)
+GET {{UnitConversionApi_HostAddress}}/api/conversion?value=100&from=meter&to=feet
+Accept: application/json
+
+### 2. Valid Temperature Conversion (Celsius to Fahrenheit)
+GET {{UnitConversionApi_HostAddress}}/api/conversion?value=0&from=celsius&to=fahrenheit
+Accept: application/json
+
+### 3. Valid Weight Conversion (Kilogram to Pound)
+GET {{UnitConversionApi_HostAddress}}/api/conversion?value=10&from=kilogram&to=pound
+Accept: application/json
+
+### 4. Invalid Unit Validation (Unsupported Unit)
+GET {{UnitConversionApi_HostAddress}}/api/conversion?value=10&from=kilogram&to=stone
+Accept: application/json
+
+### 5. Incompatible Category Validation (Length to Temperature)
+GET {{UnitConversionApi_HostAddress}}/api/conversion?value=100&from=meter&to=fahrenheit
+Accept: application/json
+
+### 6. Missing Parameter Validation (No Value Parameter)
+GET {{UnitConversionApi_HostAddress}}/api/conversion?from=meter&to=feet
+Accept: application/json
+
